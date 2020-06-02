@@ -4,13 +4,38 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public int numberOfHitsLeft = 2;
+
+    void setColor(Color color) {
+        this.gameObject.GetComponent<Renderer>().material.color = color;
     }
 
-    // Update is called once per frame
+    void updateColor() {
+        switch(numberOfHitsLeft)
+        {
+            case 1:
+                setColor(new Color(0.0f, 1.0f, 0.56f, 1.0f));
+                break;
+            case 2:
+                setColor(new Color(0.0f, 0.87f, 1.0f, 1.0f));
+                break;
+            case 3:
+                setColor(new Color(0.0f, 0.23f, 1.0f, 1.0f));
+                break;
+            case 4:
+                setColor(new Color(0.9f, 0.0f, 1.0f, 1.0f));
+                break;
+            case 5:
+                setColor(new Color(1.0f, 0.0f, 0.0f, 1.0f));
+                break;
+        }
+    }
+
+    void Start()
+    {
+        updateColor();
+    }
+
     void Update()
     {
         
@@ -20,8 +45,9 @@ public class Brick : MonoBehaviour
     {
         if(col.collider.gameObject.tag == "Ball")
         {
-            Debug.Log("destory");
-            Destroy(gameObject, 0.1f);
+            numberOfHitsLeft--;
+            if(numberOfHitsLeft <= 0) Destroy(gameObject, 0.1f);
+            updateColor();
         }
     }
 }
