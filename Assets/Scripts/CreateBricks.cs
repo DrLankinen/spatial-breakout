@@ -14,7 +14,7 @@ public class CreateBricks : MonoBehaviour
     void Start()
     {
         int depth_size = 2;
-        int row_size = 3;
+        int row_size = 5;
         int column_size = 4;
         brickArray = new Object[depth_size * row_size * column_size];
         for(int d = 0; d < depth_size; d++)

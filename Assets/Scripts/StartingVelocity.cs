@@ -11,18 +11,10 @@ public class StartingVelocity : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = new Vector3(0.0f, -2.0f, -40.0f);
-        // rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void FixedUpdate()
-    {
-        // rb.velocity = new Vector3(0.0f, 0.0f, -2.0f);
+        transform.position = new Vector3(Random.Range(-4.0f, 4.0f),
+            Random.Range(1.0f, 4.0f),
+            0);
+        rb.velocity = new Vector3(0.0f,
+            Random.Range(-2.0f,2.0f), Random.Range(-30.0f,-10.0f));
     }
 }
