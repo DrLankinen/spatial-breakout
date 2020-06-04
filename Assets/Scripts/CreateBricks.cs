@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class CreateBricks : MonoBehaviour
 {
+    
     public GameObject brick;
+    public GameObject scoreText;
+
     private Object[] brickArray;
+    private int brickScore = 100;
 
     void Start()
     {
@@ -43,10 +47,11 @@ public class CreateBricks : MonoBehaviour
                 numOfDestoryed++;
             }
         }
-        Debug.Log("num of desotryed:" + numOfDestoryed.ToString());
         if(numOfDestoryed == brickArray.Length)
         {
             Debug.Log("Game Over");
         }
+
+        scoreText.GetComponent<UnityEngine.UI.Text>().text = (numOfDestoryed * brickScore).ToString();
     }
 }
