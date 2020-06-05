@@ -14,19 +14,19 @@ public class Brick : MonoBehaviour
         switch(numberOfHitsLeft)
         {
             case 1:
-                setColor(new Color(0.0f, 1.0f, 0.56f, 1.0f));
+                setColor(new Color(0.0f, 1.0f, 0.5f, 0.9f));
                 break;
             case 2:
-                setColor(new Color(0.0f, 0.87f, 1.0f, 1.0f));
+                setColor(new Color(0.0f, 0.8f, 1.0f, 0.9f));
                 break;
             case 3:
-                setColor(new Color(0.0f, 0.23f, 1.0f, 1.0f));
+                setColor(new Color(0.0f, 0.2f, 1.0f, 0.9f));
                 break;
             case 4:
-                setColor(new Color(0.9f, 0.0f, 1.0f, 1.0f));
+                setColor(new Color(0.9f, 0.0f, 1.0f, 0.9f));
                 break;
             case 5:
-                setColor(new Color(1.0f, 0.0f, 0.0f, 1.0f));
+                setColor(new Color(1.0f, 0.0f, 0.0f, 0.9f));
                 break;
         }
     }
