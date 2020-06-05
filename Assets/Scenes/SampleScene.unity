@@ -4084,8 +4084,8 @@ Camera:
   m_GameObject: {fileID: 1630733487}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.6981132, g: 0.6981132, b: 0.2799039, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -8452,6 +8452,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VRSimulator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304441427960532376, guid: 4277fde0e725365438938b6bade78332,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304441427960532376, guid: 4277fde0e725365438938b6bade78332,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.21960782
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304441427960532376, guid: 4277fde0e725365438938b6bade78332,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.8392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304441427960532376, guid: 4277fde0e725365438938b6bade78332,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.2516239
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4277fde0e725365438938b6bade78332, type: 3}
