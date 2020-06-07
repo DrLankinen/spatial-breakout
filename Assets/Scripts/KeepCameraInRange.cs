@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class KeepCameraInRange : MonoBehaviour
 {
-    public float xLeftRange = -3.6f;
-    public float xRightRange = 3.6f;
-    public float zFrontRange = 2.8f;
-    public float zBackRange = -2.8f;
+    public float xLeftRange = -4f;
+    public float xRightRange = 4f;
+    public float zFrontRange = 3f;
+    public float zBackRange = -2.5f;
 
     void Update()
     {
