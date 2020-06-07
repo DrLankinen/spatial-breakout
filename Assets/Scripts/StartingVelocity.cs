@@ -5,15 +5,28 @@ using UnityEngine;
 public class StartingVelocity : MonoBehaviour
 {
     public Rigidbody rb;
-    public int e = 0;
+    public float maxSpeed = 40.0f;
+    public float minSpeed = 10.0f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         transform.position = new Vector3(Random.Range(-4.0f, 4.0f),
             Random.Range(1.0f, 4.0f),
-            0);
+            15.0f);
         rb.velocity = new Vector3(0.0f,
-            Random.Range(-2.0f,2.0f), Random.Range(-30.0f,-10.0f));
+            Random.Range(-2.0f,2.0f), Random.Range(-15.0f,-10.0f));
+    }
+
+    void FixedUpdate()
+    {
+        if(GetComponent<Rigidbody>().velocity.magnitude > maxSpeed)
+        {
+            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity.normalized * maxSpeed;
+        }
+        if(GetComponent<Rigidbody>().velocity.magnitude < minSpeed)
+        {
+            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity.normalized * minSpeed;
+        }
     }
 }
