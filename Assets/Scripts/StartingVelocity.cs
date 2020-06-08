@@ -33,9 +33,14 @@ public class StartingVelocity : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+        Debug.Log("Collide with: " + other.gameObject.name);
         if ((other.gameObject.name == "LeftControllerScriptAlias" ||
             other.gameObject.name == "RightControllerScriptAlias")) {
                 rb.velocity = rb.velocity*forceMultiplier;
+        }
+        
+        if ((other.gameObject.name == "back")) {
+            Lives.livesLeft--;
         }
     }
 }
