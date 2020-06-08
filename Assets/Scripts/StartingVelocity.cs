@@ -7,6 +7,7 @@ public class StartingVelocity : MonoBehaviour
     public Rigidbody rb;
     public float maxSpeed = 40.0f;
     public float minSpeed = 10.0f;
+    private float forceMultiplier = 1.5f;
 
     void Start()
     {
@@ -27,6 +28,14 @@ public class StartingVelocity : MonoBehaviour
         if(GetComponent<Rigidbody>().velocity.magnitude < minSpeed)
         {
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity.normalized * minSpeed;
+        }
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if ((other.gameObject.name == "LeftControllerScriptAlias" ||
+            other.gameObject.name == "RightControllerScriptAlias")) {
+                rb.velocity = rb.velocity*forceMultiplier;
         }
     }
 }
